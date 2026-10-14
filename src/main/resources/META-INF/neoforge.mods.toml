@@ -1,0 +1,27 @@
+license = "MIT"
+[[mods]]
+modId = "${mod_id}"
+version = "${mod_version}"
+displayName = "Example Mod"
+authors = "Example Author"
+description = '''
+A Simple Voice Chat API mod example
+'''
+[[dependencies.${ mod_id }]]
+modId = "neoforge"
+type = "required"
+versionRange = "${neoforge_dependency}"
+ordering = "NONE"
+side = "BOTH"
+[[dependencies.${ mod_id }]]
+modId = "minecraft"
+type = "required"
+versionRange = "[${minecraft_version}]"
+ordering = "NONE"
+side = "BOTH"
+[[dependencies.${mod_id}]]
+modId="voicechat_api"
+type = "required"
+versionRange="[${voicechat_api_version},)"
+ordering="AFTER"
+side="BOTH"
