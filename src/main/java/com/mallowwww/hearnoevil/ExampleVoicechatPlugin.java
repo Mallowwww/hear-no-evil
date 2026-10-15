@@ -1,4 +1,4 @@
-package com.example.examplemod;
+package com.mallowwww.hearnoevil;
 
 import de.maxhenkel.voicechat.api.ForgeVoicechatPlugin;
 import de.maxhenkel.voicechat.api.VoicechatApi;

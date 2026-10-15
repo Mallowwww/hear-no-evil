@@ -49,8 +49,8 @@ dependencies {
 
     implementation 'com.google.code.findbugs:jsr305:3.0.2'
 
-    compileOnly "de.maxhenkel.voicechat:voicechat-api:${voicechat_api_version}"
-    localRuntime "maven.modrinth:simple-voice-chat:neoforge-${voicechat_mod_version}"
+    implementation "de.maxhenkel.voicechat:voicechat-api:${voicechat_api_version}"
+    implementation "maven.modrinth:simple-voice-chat:neoforge-${voicechat_mod_version}"
 }
 
 processResources {

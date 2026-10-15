@@ -1,11 +1,13 @@
 license = "MIT"
+modLoader = "javafml"
+loaderVersion = "[4,)"
 [[mods]]
 modId = "${mod_id}"
 version = "${mod_version}"
-displayName = "Example Mod"
-authors = "Example Author"
+displayName = "Hear No Evil"
+authors = "Mallowwww"
 description = '''
-A Simple Voice Chat API mod example
+Radio communication mod for Create and Simple Voice Chat with much more than just walkie-talkies
 '''
 [[dependencies.${ mod_id }]]
 modId = "neoforge"
@@ -19,9 +21,3 @@ type = "required"
 versionRange = "[${minecraft_version}]"
 ordering = "NONE"
 side = "BOTH"
-[[dependencies.${mod_id}]]
-modId="voicechat_api"
-type = "required"
-versionRange="[${voicechat_api_version},)"
-ordering="AFTER"
-side="BOTH"

@@ -1,4 +1,4 @@
-package com.example.examplemod;
+package com.mallowwww.hearnoevil;
 
 import com.mojang.logging.LogUtils;
 import net.neoforged.bus.api.IEventBus;
@@ -12,7 +12,7 @@ import org.slf4j.Logger;
 @Mod(ExampleMod.MOD_ID)
 public class ExampleMod {
 
-    public static final String MOD_ID = "example_mod";
+    public static final String MOD_ID = "hearnoevil";
     public static final Logger LOGGER = LogUtils.getLogger();
 
     public ExampleMod(IEventBus modEventBus) {
