@@ -1,6 +1,8 @@
 package com.mallowwww.hearnoevil;
 
 import com.mojang.logging.LogUtils;
+import net.minecraft.resources.ResourceLocation;
+import net.minecraft.world.level.Level;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.common.Mod;
@@ -21,12 +23,16 @@ public class RadioMod {
     }
 
     private void setup(FMLCommonSetupEvent event) {
-        LOGGER.info("Setting up example mod");
+
+    }
+
+    public static ResourceLocation path(String s) {
+        return ResourceLocation.fromNamespaceAndPath(MOD_ID, s);
     }
 
     @SubscribeEvent
     public void onServerStarting(ServerStartingEvent event) {
-        LOGGER.info("Server starting");
+
     }
 
 }
