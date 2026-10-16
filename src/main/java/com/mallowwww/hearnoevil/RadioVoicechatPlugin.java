@@ -6,14 +6,14 @@ import de.maxhenkel.voicechat.api.VoicechatPlugin;
 import de.maxhenkel.voicechat.api.events.EventRegistration;
 
 @ForgeVoicechatPlugin
-public class ExampleVoicechatPlugin implements VoicechatPlugin {
+public class RadioVoicechatPlugin implements VoicechatPlugin {
 
     /**
      * @return the unique ID for this voice chat plugin
      */
     @Override
     public String getPluginId() {
-        return ExampleMod.MOD_ID;
+        return RadioMod.MOD_ID;
     }
 
     /**
@@ -23,7 +23,7 @@ public class ExampleVoicechatPlugin implements VoicechatPlugin {
      */
     @Override
     public void initialize(VoicechatApi api) {
-        ExampleMod.LOGGER.info("Example voice chat plugin initialized!");
+        RadioMod.LOGGER.info("Example voice chat plugin initialized!");
     }
 
     /**

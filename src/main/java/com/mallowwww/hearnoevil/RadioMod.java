@@ -9,13 +9,13 @@ import net.neoforged.neoforge.common.NeoForge;
 import net.neoforged.neoforge.event.server.ServerStartingEvent;
 import org.slf4j.Logger;
 
-@Mod(ExampleMod.MOD_ID)
-public class ExampleMod {
+@Mod(RadioMod.MOD_ID)
+public class RadioMod {
 
     public static final String MOD_ID = "hearnoevil";
     public static final Logger LOGGER = LogUtils.getLogger();
 
-    public ExampleMod(IEventBus modEventBus) {
+    public RadioMod(IEventBus modEventBus) {
         modEventBus.addListener(this::setup);
         NeoForge.EVENT_BUS.register(this);
     }
