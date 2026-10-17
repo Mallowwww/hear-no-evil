@@ -15,10 +15,12 @@ import net.minecraft.world.phys.Vec3;
 
 import java.util.UUID;
 
-public class PlayerAudioSubscriber extends FrequencySubscriber<AudioTransmittableData> {
+public class PlayerAudioSubscriber extends AbstractAudioSubscriber {
     private final ServerPlayer player;
     private final StaticAudioChannel channel;
     private final VoicechatServerApi api;
+
+    private int counter = 0;
 
     public PlayerAudioSubscriber(ServerPlayer player, StaticAudioChannel channel, VoicechatServerApi api) {
         this.player = player;
@@ -33,20 +35,29 @@ public class PlayerAudioSubscriber extends FrequencySubscriber<AudioTransmittabl
                 api.createEncoder(),
                 audioTransmittableData.get().samples()
         );
+        audioPlayer.startPlaying();
+
+        if (counter++ % 20 == 0) {
+//            var samples = audioTransmittableData.get().samples();
+//            for (int i = 0; i < samples.length; i++) {
+//                if (samples[i] > 0)
+//                    System.out.println(i);
+//            }
+        }
     }
 
     @Override
     public Vec3 location() {
-        return null;
+        return player.position();
     }
 
     @Override
     public ResourceKey<Level> level() {
-        return null;
+        return player.level().dimension();
     }
 
     @Override
     public UUID id() {
-        return null;
+        return player.getUUID();
     }
 }

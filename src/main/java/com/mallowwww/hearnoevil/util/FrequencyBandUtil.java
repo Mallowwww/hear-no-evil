@@ -10,4 +10,7 @@ public class FrequencyBandUtil {
     static {
         BAND_DATA.put('a', new FrequencyBandData(0, 1, 300, 1));
     }
+    public static FrequencyBandData forFrequency(Frequency frequency) {
+        return BAND_DATA.get(frequency.band());
+    }
 }

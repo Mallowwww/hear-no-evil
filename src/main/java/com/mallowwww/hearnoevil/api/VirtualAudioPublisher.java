@@ -37,7 +37,11 @@ public class VirtualAudioPublisher extends FrequencyPublisher<AudioTransmittable
 
     @Override
     AudioTransmittableData get() {
-        return null;
+        short[] data = new short[48000 / 20];
+        for (int i = 0; i < data.length; i++) {
+            data[i] = (short) (Math.sin(i / 48000f * 200f * Math.PI) * 32000);
+        }
+        return new AudioTransmittableData(new AudioTick(data));
     }
 
     @Override

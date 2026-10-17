@@ -25,6 +25,35 @@ public record AudioTick(short[] samples) {
         return new AudioTick(newSamples);
     }));
 
+    public AudioTick add(AudioTick toAdd) {
+        short[] result = new short[samples.length];
+        for (int i = 0; i < samples.length && i < toAdd.samples.length; i++) {
+            result[i] = (short) (samples[i] + toAdd.samples[i]);
+        }
+        return new AudioTick(result);
+    }
+    public AudioTick subtract(AudioTick toAdd) {
+        short[] result = new short[samples.length];
+        for (int i = 0; i < samples.length && i < toAdd.samples.length; i++) {
+            result[i] = (short) (samples[i] - toAdd.samples[i]);
+        }
+        return new AudioTick(result);
+    }
+    public AudioTick multiply(AudioTick toAdd) {
+        short[] result = new short[samples.length];
+        for (int i = 0; i < samples.length && i < toAdd.samples.length; i++) {
+            result[i] = (short) (samples[i] * toAdd.samples[i]);
+        }
+        return new AudioTick(result);
+    }
+    public AudioTick divide(AudioTick toAdd) {
+        short[] result = new short[samples.length];
+        for (int i = 0; i < samples.length && i < toAdd.samples.length; i++) {
+            result[i] = (short) (samples[i] / toAdd.samples[i]);
+        }
+        return new AudioTick(result);
+    }
+
     public int size() {
         return samples.length;
     }
