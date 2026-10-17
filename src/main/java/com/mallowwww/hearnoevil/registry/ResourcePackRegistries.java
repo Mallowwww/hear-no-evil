@@ -8,7 +8,7 @@ import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.common.EventBusSubscriber;
 import net.neoforged.neoforge.registries.DataPackRegistryEvent;
 
-@EventBusSubscriber
+@EventBusSubscriber(bus = EventBusSubscriber.Bus.MOD)
 public class ResourcePackRegistries {
     public static final ResourceKey<Registry<VirtualAudioPublisher>> VIRTUAL_AUDIO_PUBLISHER_REGISTRY = ResourceKey.createRegistryKey(RadioMod.path("virtual_audio_publisher"));
 
@@ -18,5 +18,6 @@ public class ResourcePackRegistries {
                 VIRTUAL_AUDIO_PUBLISHER_REGISTRY,
                 VirtualAudioPublisher.CODEC
         );
+
     }
 }

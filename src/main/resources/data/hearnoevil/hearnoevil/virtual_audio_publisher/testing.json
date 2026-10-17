@@ -1,0 +1,8 @@
+{
+  "frequency": {
+    "band": "a",
+    "freq": "000"
+  },
+  "level": "minecraft:overworld",
+  "audio_path": "seenoevil:audio/test"
+}

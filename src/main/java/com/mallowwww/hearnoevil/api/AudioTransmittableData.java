@@ -1,20 +1,20 @@
 package com.mallowwww.hearnoevil.api;
 
-public class AudioTransmittableData implements TransmittableData<Integer> {
-    private final Integer[] data;
+public class AudioTransmittableData implements TransmittableData<AudioTick> {
+    private final AudioTick data;
 
-    public AudioTransmittableData(Integer[] data) {
+    public AudioTransmittableData(AudioTick data) {
         this.data = data;
     }
 
     @Override
-    public Integer[] get() {
+    public AudioTick get() {
         return data;
     }
 
     @Override
     public int size() {
-        return data.length;
+        return data.size();
     }
 
     @Override

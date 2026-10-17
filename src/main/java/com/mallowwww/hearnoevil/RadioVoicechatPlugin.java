@@ -1,12 +1,18 @@
 package com.mallowwww.hearnoevil;
 
-import de.maxhenkel.voicechat.api.ForgeVoicechatPlugin;
-import de.maxhenkel.voicechat.api.VoicechatApi;
-import de.maxhenkel.voicechat.api.VoicechatPlugin;
+import com.mallowwww.hearnoevil.api.Frequency;
+import com.mallowwww.hearnoevil.api.PlayerAudioSubscriber;
+import com.mallowwww.hearnoevil.api.RadioAPI;
+import de.maxhenkel.voicechat.api.*;
 import de.maxhenkel.voicechat.api.events.EventRegistration;
+import net.minecraft.server.level.ServerPlayer;
+
+import java.util.UUID;
 
 @ForgeVoicechatPlugin
 public class RadioVoicechatPlugin implements VoicechatPlugin {
+
+    private static VoicechatApi API;
 
     /**
      * @return the unique ID for this voice chat plugin
@@ -24,6 +30,8 @@ public class RadioVoicechatPlugin implements VoicechatPlugin {
     @Override
     public void initialize(VoicechatApi api) {
         RadioMod.LOGGER.info("Example voice chat plugin initialized!");
+        API = api;
+
     }
 
     /**
@@ -34,6 +42,13 @@ public class RadioVoicechatPlugin implements VoicechatPlugin {
     @Override
     public void registerEvents(EventRegistration registration) {
         // TODO register your events
+    }
+
+    public static void subscribePlayer(ServerPlayer player, Frequency frequency) {
+        var api = (VoicechatServerApi) API;
+        RadioAPI.INSTANCE.subscribe(new PlayerAudioSubscriber(
+                player, api.createStaticAudioChannel(UUID.randomUUID()), api
+        ), frequency);
     }
 
 }

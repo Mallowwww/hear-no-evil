@@ -15,24 +15,24 @@ public class VirtualAudioPublisher extends FrequencyPublisher<AudioTransmittable
     private final UUID id;
     private final ResourceKey<Level> level;
     private final ResourceLocation audioPath;
+    private final Frequency frequency;
 
     public static final Codec<VirtualAudioPublisher> CODEC = RecordCodecBuilder.create(i -> i.group(
-            Codec.STRING.fieldOf("id").forGetter((VirtualAudioPublisher publisher) -> publisher.id.toString()),
+            Frequency.CODEC.fieldOf("frequency").forGetter((VirtualAudioPublisher publisher) -> publisher.frequency),
             ResourceLocation.CODEC.fieldOf("level").forGetter((VirtualAudioPublisher publisher) -> publisher.level.location()),
             ResourceLocation.CODEC.fieldOf("audio_path").forGetter((VirtualAudioPublisher publisher) -> publisher.audioPath)
-    ).apply(i, (id, level, audioPath) -> new VirtualAudioPublisher(
-        ResourceKey.create(Registries.DIMENSION, level), audioPath, UUID.fromString(id)
+    ).apply(i, (f, level, audioPath) -> new VirtualAudioPublisher(
+        f, ResourceKey.create(Registries.DIMENSION, level), audioPath
     )));
 
-    public VirtualAudioPublisher(ResourceKey<Level> level, ResourceLocation audioPath) {
+    public VirtualAudioPublisher(Frequency frequency, ResourceKey<Level> level, ResourceLocation audioPath) {
+        this.frequency = frequency;
         this.level = level;
         id = UUID.randomUUID();
         this.audioPath = audioPath;
     }
-    private VirtualAudioPublisher(ResourceKey<Level> level, ResourceLocation audioPath, UUID id) {
-        this.level = level;
-        this.audioPath = audioPath;
-        this.id = id;
+    public Frequency frequency() {
+        return this.frequency;
     }
 
     @Override

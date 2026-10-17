@@ -1,8 +1,9 @@
 package com.mallowwww.hearnoevil;
 
+import com.mallowwww.hearnoevil.api.RadioAPI;
+import com.mallowwww.hearnoevil.registry.ResourcePackRegistries;
 import com.mojang.logging.LogUtils;
 import net.minecraft.resources.ResourceLocation;
-import net.minecraft.world.level.Level;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.common.Mod;
@@ -19,6 +20,9 @@ public class RadioMod {
 
     public RadioMod(IEventBus modEventBus) {
         modEventBus.addListener(this::setup);
+
+        ModArgumentTypes.register(modEventBus);
+
         NeoForge.EVENT_BUS.register(this);
     }
 
@@ -32,7 +36,14 @@ public class RadioMod {
 
     @SubscribeEvent
     public void onServerStarting(ServerStartingEvent event) {
+        var registry = event.getServer().registryAccess().registry(ResourcePackRegistries.VIRTUAL_AUDIO_PUBLISHER_REGISTRY).get();
 
+        registry.forEach(publisher -> {
+            RadioAPI.INSTANCE.publish(
+                publisher, publisher.frequency()
+            );
+            System.out.println(publisher.frequency().toString());
+        });
     }
 
 }
