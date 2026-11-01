@@ -20,5 +20,7 @@ public class ItemModels extends ItemModelProvider
         basicItem(ModItems.RADIO_COMPONENT.get());
         basicItem(ModItems.RECORDING_COMPONENT.get());
         basicItem(ModItems.VIDEO_COMPONENT.get());
+        basicItem(ModItems.SCULK_TENDRILS.get());
+        basicItem(ModItems.REDSTONE_FIBERS.get());
     }
 }
