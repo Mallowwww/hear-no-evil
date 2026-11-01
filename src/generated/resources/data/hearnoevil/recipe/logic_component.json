@@ -1,0 +1,27 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "group": "hne_components",
+  "key": {
+    "c": {
+      "item": "minecraft:copper_ingot"
+    },
+    "f": {
+      "item": "minecraft:rotten_flesh"
+    },
+    "g": {
+      "item": "minecraft:ghast_tear"
+    },
+    "r": {
+      "item": "minecraft:redstone"
+    }
+  },
+  "pattern": [
+    "fg",
+    "cr"
+  ],
+  "result": {
+    "count": 1,
+    "id": "hearnoevil:logic_component"
+  }
+}

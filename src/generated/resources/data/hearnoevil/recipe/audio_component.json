@@ -1,0 +1,27 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "group": "hne_components",
+  "key": {
+    "c": {
+      "item": "minecraft:copper_ingot"
+    },
+    "h": {
+      "item": "minecraft:goat_horn"
+    },
+    "r": {
+      "item": "minecraft:redstone"
+    },
+    "s": {
+      "item": "hearnoevil:sculk_tendrils"
+    }
+  },
+  "pattern": [
+    "hs",
+    "cr"
+  ],
+  "result": {
+    "count": 1,
+    "id": "hearnoevil:audio_component"
+  }
+}

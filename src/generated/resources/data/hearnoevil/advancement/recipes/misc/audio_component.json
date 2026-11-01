@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_tendrils": {
+      "conditions": {
+        "items": [
+          {
+            "items": "hearnoevil:sculk_tendrils"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "hearnoevil:audio_component"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_tendrils"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "hearnoevil:audio_component"
+    ]
+  }
+}
