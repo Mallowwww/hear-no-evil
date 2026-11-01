@@ -7,7 +7,7 @@ version = "${mod_version}"
 displayName = "Hear No Evil"
 authors = "Mallowwww"
 description = '''
-Radio communication mod for Create and Simple Voice Chat with much more than just walkie-talkies
+Radio communication mod for Simple Voice Chat with much more than just walkie-talkies
 '''
 [[dependencies.${ mod_id }]]
 modId = "neoforge"

@@ -1,6 +1,7 @@
 package com.mallowwww.hearnoevil;
 
 import com.mallowwww.hearnoevil.api.RadioAPI;
+import com.mallowwww.hearnoevil.content.ModItems;
 import com.mallowwww.hearnoevil.registry.ResourcePackRegistries;
 import com.mojang.logging.LogUtils;
 import net.minecraft.resources.ResourceLocation;
@@ -22,6 +23,7 @@ public class RadioMod {
         modEventBus.addListener(this::setup);
 
         ModArgumentTypes.register(modEventBus);
+        ModItems.register(modEventBus);
 
         NeoForge.EVENT_BUS.register(this);
     }
