@@ -1,0 +1,10 @@
+{
+  "itemGroup.hearnoevil.tab": "Hear No Evil",
+  "item.hearnoevil.audio_component": "Audio Component",
+  "item.hearnoevil.video_component": "Video Component",
+  "item.hearnoevil.logic_component": "Logic Component",
+  "item.hearnoevil.recording_component": "Recording Component",
+  "item.hearnoevil.radio_component": "Radio Component",
+  "item.hearnoevil.sculk_tendrils": "Sculk Tendrils",
+  "item.hearnoevil.redstone_fibers": "Redstone Fibers"
+}

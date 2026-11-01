@@ -35,7 +35,7 @@ public class ModTabs
     }
 
     public static final Supplier<CreativeModeTab> MOD_TAB = MOD_TABS.register("mod_tab", () -> CreativeModeTab.builder()
-            .title(Component.translatable("itemGroup." + RadioMod.MOD_ID + ".tab"))
+            .title(Component.translatable("itemGroup.hearnoevil.tab"))
             .icon(() -> new ItemStack(ModItems.RADIO_COMPONENT.get()))
             .displayItems((p, o) ->
             {
